@@ -1,5 +1,5 @@
-import { ComponentContract } from "../../component-types/src";
-import { ComponentCompiler } from "../../component-compiler/src";
+import { ComponentContract } from "@khulnasoft-api/component-types";
+import { ComponentCompiler } from "@khulnasoft-api/component-compiler";
 
 export const standardTestContract: ComponentContract = {
   name: "UserProfileCard",
