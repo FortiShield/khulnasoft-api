@@ -1,0 +1,31 @@
+{
+  "entryPoints": ["packages/khulnasoft/src/khulnasoft.ts"],
+  "out": "docs/typedoc",
+  "tsconfig": "tsconfig.json",
+  "includeVersion": true,
+  "readme": "none",
+  "searchInComments": true,
+  "visibility": "public",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "excludeNotDocumented": false,
+  "includeSources": true,
+  "hideGenerator": false,
+  "categorizeByGroup": true,
+  "cacheStrategy": "none",
+  "githubPages": false,
+  "plugin": [],
+  "moduleResolution": "node",
+  "compiler": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "gitRevision": "main",
+  "typeLanguage": "TypeScript",
+  "entryPointStrategy": "expand",
+  "skipErrorChecking": true
+}

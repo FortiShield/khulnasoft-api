@@ -1,0 +1,34 @@
+---
+sidebar_position: 10
+---
+
+# API Reference
+
+This page contains the automatically generated API documentation for the Khulnasoft framework, generated using [TypeDoc](https://typedoc.org/).
+
+The documentation below is produced from the TypeScript source code and reflects the current public API surface.
+
+import TypeDoc from "@site/src/components/TypeDoc";
+
+## khulnasoft
+
+The core framework package.
+
+<details>
+<summary>View Generated Documentation</summary>
+
+```ts
+export { openapiSpec } from "./openapiSpec";
+export { type SelectTree, parseSelect } from "./parseSelect";
+export { z } from "./z";
+export { createClient } from "./client";
+export { createRecursiveProxy } from "./createRecursiveProxy";
+export { type KhulnasoftClient, type CreateClientOptions, ClientPromise, type ClientPromiseProps, PaginatorPromise, type Page, type RequestOptions } from "./client";
+export { getApiRouteMap } from "./gen/getApiRouteMap";
+export { HttpMethod, HttpPath, HttpEndpoint, parseEndpoint, ZodObjectSchema, type Handler, type RequestData, type EndpointConfig, type BaseEndpoint, type AnyBaseEndpoint, type Endpoint, type AnyEndpoint, type EndpointPathInput, type EndpointPathOutput, type EndpointQueryInput, type EndpointQueryOutput, type EndpointHasRequiredQuery, type EndpointBodyInput, type EndpointBodyOutput, type EndpointResponseInput, type EndpointResponseOutput, type ResourceConfig, type AnyResourceConfig, type OpenAPIConfig, type APIDescription, type APIRouteMap, type RouteMapAction, type AnyAPIDescription, type KhulnasoftError, type BadRequestError, type UnauthorizedError, type ForbiddenError, type NotFoundError, type KhulnasoftPlugin, type MakeKhulnasoftPlugin, type CreateKhulnasoftOptions, type KhulnasoftHeaders, type KhulnasoftCustomContext, type BaseKhulnasoftContext, type KhulnasoftContext, type Params, type PluginsWithStaticsKeys, type ExtractStatics, type ExtractExecuteResponse, type OpenAPIResponse, type OpenAPIEndpoint, type OpenAPITopLevel, type CreateEndpointOptions, type CreateResourceOptions, type CreateApiOptions, class Khulnasoft, type TypeSchemas } from "khulnasoft";
+```
+</details>
+
+:::note
+Run `pnpm docs:types` to regenerate this documentation from source.
+:::

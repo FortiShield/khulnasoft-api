@@ -1,37 +1,38 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const path = require("path");
+const fs = require("fs");
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+
+const typedocItems = (() => {
+  const typedocDir = path.resolve(__dirname, "../docs/typedoc");
+  if (!fs.existsSync(typedocDir)) return [];
+  const entries = fs.readdirSync(typedocDir, { withFileTypes: true });
+  return entries
+    .filter((e) => e.isDirectory())
+    .map((e) => ({
+      type: "doc",
+      id: `api/${e.name}`,
+      label: e.name.charAt(0).toUpperCase() + e.name.slice(1),
+    }));
+})();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "✨ Khulnasoft API",
   tagline: "A (very WIP) TypeScript framework for robust & polished REST APIs",
-  // favicon: "img/favicon.ico",
-
-  // Set the production url of your site here
   url: "https://khulnasoft-docs-1.netlify.app",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/khulnasoft/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "khulnasoft", // Usually your GitHub org/user name.
-  projectName: "khulnasoft-api", // Usually your repo name.
-
+  organizationName: "khulnasoft",
+  projectName: "khulnasoft-api",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
   },
-
   presets: [
     [
       "classic",
@@ -40,35 +41,21 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/khulnasoft/khulnasoft-api/tree/main/docs",
+          includeCurrentVersion: false,
         },
-        // blog: {
-        // showReadingTime: true,
-        // // Please change this to your repo.
-        // // Remove this to remove the "edit this page" links.
-        // editUrl:
-        //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        // },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      // image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "✨ Khulnasoft API",
-        // logo: {
-        //   alt: "My Site Logo",
-        //   src: "img/logo.svg",
-        // },
         items: [
           {
             type: "docSidebar",
@@ -76,7 +63,6 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          // { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/khulnasoft/khulnasoft-api",
             label: "GitHub",
@@ -94,32 +80,15 @@ const config = {
                 label: "Docs",
                 to: "/docs/intro",
               },
+              {
+                label: "API Reference",
+                to: "/docs/api",
+              },
             ],
           },
-          // {
-          //   title: "Community",
-          //   items: [
-          // {
-          //   label: "Stack Overflow",
-          //   href: "https://stackoverflow.com/questions/tagged/docusaurus",
-          // },
-          // {
-          //   label: "Discord",
-          //   href: "https://discordapp.com/invite/docusaurus",
-          // },
-          // {
-          //   label: "Twitter",
-          //   href: "https://twitter.com/docusaurus",
-          // },
-          //   ],
-          // },
           {
             title: "More",
             items: [
-              // {
-              //   label: "Blog",
-              //   to: "/blog",
-              // },
               {
                 label: "GitHub",
                 href: "https://github.com/khulnasoft/khulnasoft-api",
@@ -134,6 +103,10 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  // Add TypeDoc-generated API docs as a custom route
+  customFields: {
+    typedocItems: typedocItems,
+  },
 };
 
 module.exports = config;
