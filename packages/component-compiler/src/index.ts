@@ -6,14 +6,7 @@ import {
   ComponentNode as NodeType,
 } from "../../component-types/src";
 
-export type CompilationTarget =
-  | "react"
-  | "vue"
-  | "svelte"
-  | "solid"
-  | "angular"
-  | "qwik"
-  | "alpine";
+export type CompilationTarget = "react" | "vue";
 
 export type CompilationResult = {
   readonly code: string;
@@ -52,13 +45,6 @@ export class ComponentCompiler {
         break;
       case "vue":
         code = this.compileVue();
-        break;
-      case "svelte":
-      case "solid":
-      case "angular":
-      case "qwik":
-      case "alpine":
-        code = `// TODO: Target ${target} compilation backend\nexport function ${this.contract.name}() { return null; }`;
         break;
       default:
         diagnostics.push(`Unknown compilation target: ${target}`);
