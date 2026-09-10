@@ -27,22 +27,22 @@
   "exclude": ["node_modules"],
   "references": [
     {
-      "path": "../packages/next-auth"
+      "path": "../../packages/next-auth"
     },
     {
-      "path": "../packages/next"
+      "path": "../../packages/next"
     },
     {
-      "path": "../packages/prisma"
+      "path": "../../packages/prisma"
     },
     {
-      "path": "../packages/react-query"
+      "path": "../../packages/react-query"
     },
     {
-      "path": "../packages/react-query/tsconfig.esm.json"
+      "path": "../../packages/react-query/tsconfig.esm.json"
     },
     {
-      "path": "../packages/khulnasoft"
+      "path": "../../packages/khulnasoft"
     }
   ]
 }

@@ -7,13 +7,13 @@
     "mongo": "yarn prisma generate",
     "dev": "next dev",
     "build": "prisma generate && pnpm build:api-route-map && next build --webpack && tsc -b",
-    "build:api-route-map": "node ../packages/khulnasoft/dist/cli/gen-khulnasoft-api-route-map.js api/api.ts",
+    "build:api-route-map": "node ../../packages/khulnasoft/dist/cli/gen-khulnasoft-api-route-map.js api/api.ts",
     "watch:api-route-map": "nodemon -e js,json,ts --ignore *-route-map.ts --exec pnpm build:api-route-map",
     "start": "next start",
     "lint": "next lint",
     "psql": "docker compose exec db psql -U postgres",
     "prisma": "prisma",
-    "khulnasoft": "ts-node --transpileOnly --swc ../packages/cli/src/index.ts",
+    "khulnasoft": "ts-node --transpileOnly --swc ../../packages/cli/src/index.ts",
     "test": "jest"
   },
   "prisma": {
