@@ -15,10 +15,12 @@
   },
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "typedoc": "typedoc --project typedoc.json",
     "test": "VITE_CJS_TRACE=true vitest run",
     "prebuild": "mkdir -p dist/esm && echo '{\"type\": \"module\"}' > dist/esm/package.json",
-    "prepublishOnly": "npm run clean && npm run build && npm test",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test",
     "generate-types": "node dist/scripts/run-codegen.js src/test-util generated-api-types.ts ../index"
   },
   "keywords": [

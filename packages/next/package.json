@@ -22,8 +22,12 @@
   "main": "dist/nextPlugin.js",
   "types": "dist/nextPlugin.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No tests specified\"",
     "clean": "rimraf dist *.tsbuildinfo",
-    "typedoc": "typedoc --project typedoc.json"
+    "typedoc": "typedoc --project typedoc.json",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "devDependencies": {
     "@types/node": "^20.10.3",

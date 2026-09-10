@@ -16,8 +16,10 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "format": "prettier -w .",
     "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No tests specified\"",
     "typedoc": "typedoc --project typedoc.json",
-    "prepublishOnly": "npm run clean && npm run build && npm test"
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "bin": {
     "khulnasoft": "dist/index.js"

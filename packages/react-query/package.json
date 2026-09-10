@@ -39,8 +39,11 @@
   },
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "typedoc": "typedoc --project typedoc.json",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "devDependencies": {
     "@tanstack/query-core": "^4.36.1",

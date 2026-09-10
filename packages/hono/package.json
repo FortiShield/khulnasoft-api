@@ -22,8 +22,12 @@
   "main": "dist/honoPlugin.js",
   "types": "dist/honoPlugin.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
     "clean": "rimraf dist *.tsbuildinfo",
-    "typedoc": "typedoc --project typedoc.json"
+    "typedoc": "typedoc --project typedoc.json",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "devDependencies": {
     "@types/node": "^20.10.3",

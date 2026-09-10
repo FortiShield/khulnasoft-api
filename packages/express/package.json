@@ -22,8 +22,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "jest",
     "clean": "rimraf dist *.tsbuildinfo",
-    "typedoc": "typedoc --project typedoc.json"
+    "typedoc": "typedoc --project typedoc.json",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",

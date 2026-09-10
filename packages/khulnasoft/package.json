@@ -32,10 +32,12 @@
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
     "prebuild": "mkdir -p dist/esm && echo '{\"type\": \"module\"}' > dist/esm/package.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "jest",
     "test:ci": "start-server-and-test start-test-server http://0.0.0.0:3005 test",
     "build": "pnpm run prebuild && tsc -b tsconfig.json tsconfig.esm.json",
-    "typedoc": "typedoc --project typedoc.json"
+    "typedoc": "typedoc --project typedoc.json",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "devDependencies": {
     "@asteasolutions/zod-to-openapi": "^7.3.4",

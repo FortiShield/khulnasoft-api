@@ -20,6 +20,11 @@ next-env.d.ts
 /docs/assets
 /apps/demo/.vscode
 .khulnasoft-codegen
+/fixtures/legacy-js
+
+/apps/*/.khulnasoft-codegen
+/apps/todomvc/.khulnasoft-codegen
+/examples/*/.khulnasoft-codegen
 
 # TypeDoc generated output
 *.typedoc/
