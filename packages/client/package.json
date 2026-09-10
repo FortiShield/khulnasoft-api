@@ -39,6 +39,7 @@
     "@types/lodash": "^4.14.202",
     "@types/prettier": "^2.7.3",
     "ts-node": "^10.9.1",
+    "vite": "^6.0.0",
     "vitest": "^4.1.0"
   },
   "peerDependencies": {
