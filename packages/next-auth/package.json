@@ -23,19 +23,21 @@
   "main": "dist/nextAuthPlugin.js",
   "types": "dist/nextAuthPlugin.d.ts",
   "scripts": {
-    "clean": "rimraf dist *.tsbuildinfo"
+    "clean": "rimraf dist *.tsbuildinfo",
+    "typedoc": "typedoc --project typedoc.json"
   },
   "devDependencies": {
     "@types/node": "^20.10.3",
     "next": "^16.1.7",
     "next-auth": "^4.24.5",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "typedoc": "0.28.20"
   },
   "dependencies": {
     "@khulnasoft-api/next": "workspace:*",
     "khulnasoft": "workspace:*"
   },
-  "peerDependenices": {
+  "peerDependencies": {
     "next": "^13.5.6",
     "next-auth": "^4.24.7"
   }

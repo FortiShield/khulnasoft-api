@@ -14,8 +14,8 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "clean": "rimraf dist *.tsbuildinfo package",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "typedoc": "typedoc --project typedoc.json",
     "test": "VITE_CJS_TRACE=true vitest run",
     "prebuild": "mkdir -p dist/esm && echo '{\"type\": \"module\"}' > dist/esm/package.json",
     "prepublishOnly": "npm run clean && npm run build && npm test",
@@ -40,7 +40,8 @@
     "@types/prettier": "^2.7.3",
     "ts-node": "^10.9.1",
     "vite": "^6.0.0",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.0",
+    "typedoc": "0.28.20"
   },
   "peerDependencies": {
     "@tanstack/react-query": "~5.x"

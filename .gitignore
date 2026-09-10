@@ -16,7 +16,10 @@ next-env.d.ts
 .netlify
 
 /docs/typedoc
-/demo/.vscode
+/docs/index.html
+/docs/assets
+/apps/demo/.vscode
+.khulnasoft-codegen
 
 # TypeDoc generated output
 *.typedoc/
