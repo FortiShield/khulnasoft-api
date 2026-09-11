@@ -41,7 +41,7 @@
     "verify": "pnpm prettier:check && pnpm typecheck && pnpm test:unit && pnpm build:packages",
     "dev:types": "tsc -p tsconfig.dev.json",
     "docs:start": "cd docs && pnpm start",
-    "docs:build": "pnpm docs:types",
+    "docs:build": "rimraf docs/index.html docs/hierarchy.html docs/assets && pnpm docs:types",
     "docs:deploy": "netlify deploy --dir docs --prod",
     "docs:types": "typedoc",
     "watch": "pnpm run build:watch",

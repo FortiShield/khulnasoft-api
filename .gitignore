@@ -17,6 +17,7 @@ next-env.d.ts
 
 /docs/typedoc
 /docs/index.html
+/docs/hierarchy.html
 /docs/assets
 /apps/demo/.vscode
 .khulnasoft-codegen
