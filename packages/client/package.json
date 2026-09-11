@@ -1,6 +1,6 @@
 {
   "name": "@khulnasoft-api/client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "primary client package for khulnasoft-api",
   "author": "dev@khulnasoft.com",
   "license": "ISC",

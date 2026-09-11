@@ -1,6 +1,6 @@
 {
   "name": "@khulnasoft-api/express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "ISC",
   "description": "express integration for KhulnaSoft api",
   "author": "dev@khulnasoft.com",
